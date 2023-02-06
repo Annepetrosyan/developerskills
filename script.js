@@ -25,10 +25,15 @@ const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
 
 const calcTempAmplitude = function (temps) {
   let max = temps[0];
-  for (let i = 0; i < temps.lenght; i++) {
+  let min = temps[0];
+
+  for (let i = 0; i < temps.length; i++) {
+    if (typeof temps[i] !== "number") continue;
     if (temps[i] > max) max = temps[i];
+    if (temps[i] < min) min = temps[i];
   }
-  console.log(max);
+  console.log(max, min);
 };
 
 calcTempAmplitude([3, 4, 8, 9, 5, 6, -1]);
+calcTempAmplitude(temperatures);
