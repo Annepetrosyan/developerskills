@@ -32,8 +32,10 @@ const calcTempAmplitude = function (temps) {
     if (temps[i] > max) max = temps[i];
     if (temps[i] < min) min = temps[i];
   }
-  console.log(max, min);
+  //   console.log(max, min);
+  return max - min;
 };
 
-calcTempAmplitude([3, 4, 8, 9, 5, 6, -1]);
-calcTempAmplitude(temperatures);
+// calcTempAmplitude([3, 4, 8, 9, 5, 6, -1]);
+const amplitude = calcTempAmplitude(temperatures);
+console.log(amplitude);
